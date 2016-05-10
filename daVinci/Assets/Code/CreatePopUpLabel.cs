@@ -14,14 +14,19 @@ public class CreatePopUpLabel : MonoBehaviour {
     public void CreateValuePopUp () {
 
         // eliminate all pop ups before creating the new one
-        GameObject[] popUps = GameObject.FindGameObjectsWithTag("PopUpValue");
-        foreach (GameObject pops in popUps) { Destroy(pops);}
+        try
+        {
+            GameObject[] popUps = GameObject.FindGameObjectsWithTag("PopUpValue");
+            foreach (GameObject pops in popUps) { Destroy(pops); }
+        }
 
-        Vector3 popUpPos = this.gameObject.transform.position + new Vector3 (0, this.transform.localScale.y+1f, 0); 
-        objPopUp = Instantiate(Resources.Load("prefabs/others/PopUpValue"), popUpPos, Quaternion.identity) as GameObject; //from prefab
-        GameObject popUpLabel = GameObject.Find("PopUpLabel");
-        popUpLabel.GetComponent<TextMesh>().text = "X: " + xLabel + "\nCategory: " + categoryLabel + "\nValue: " + value.ToString(); //TODO: for some reason this thing doesnt update on screen - does retain the inspector screens value
-        //Debug.Log("AFTER: "+ popUpLabel.GetComponent<TextMesh>().text);
+        finally
+        {
+            Vector3 popUpPos = this.gameObject.transform.position + new Vector3(0, this.transform.localScale.y + 1f, 0);
+            objPopUp = Instantiate(Resources.Load("prefabs/others/PopUpValue"), popUpPos, Quaternion.identity) as GameObject; //from prefab
+            GameObject popUpLabel = GameObject.Find("PopUpLabel");
+            popUpLabel.GetComponent<TextMesh>().text = "X: " + xLabel + "\nCategory: " + categoryLabel + "\nValue: " + value.ToString(); //TODO: for some reason this thing doesnt update on screen - does retain the inspector screens value
+        }
     }
 	
 	// Update is called once per frame

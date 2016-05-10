@@ -50,9 +50,6 @@ public class CreateBars : MonoBehaviour {
             GameObject objCategoryLabel = Instantiate(Resources.Load("prefabs/axis/CategoryLabel"), new Vector3(Settings.ENV_MAX_SIZE_WIDTH, 0, (numCat * barSeparationZ) + (barSeparationZ / 2)), Quaternion.identity) as GameObject;
             objCategoryLabel.transform.Rotate(90, 0, 0);
 
-            //         TextMesh catLabel = new TextMesh();
-            //       catLabel = objCategoryLabel.GetComponent<TextMesh>();
-
             float characterSize = (1f / (float)JSONtoObj.MainChart.category.Count) * (Settings.ENV_MAX_SIZE_DEPTH / 10f);
             if (characterSize > 0.1f) { characterSize = 0.1f; } // beyond 0.1, font gets too big
             objCategoryLabel.GetComponent<TextMesh>().characterSize =  characterSize;
