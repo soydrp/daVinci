@@ -75,10 +75,8 @@
     <Compile Include="Assets\Code\3dChart\CreateBars.cs" />
     <Compile Include="Assets\Code\CreatePopUpLabel.cs" />
     <Compile Include="Assets\Code\DataPrep\JSONtoObj.cs" />
-    <Compile Include="Assets\Code\Movement\KeyboardController.cs" />
-    <Compile Include="Assets\Code\Movement\KeyboardOrbit.cs" />
     <Compile Include="Assets\Code\Movement\ManageBarEvents.cs" />
-    <Compile Include="Assets\Code\Movement\MoveLookAtMe.cs" />
+    <Compile Include="Assets\Code\Movement\MouseOrbitImproved.cs" />
     <Compile Include="Assets\Code\Scene\CreateAxis.cs" />
     <Compile Include="Assets\Code\Scene\CreateTitles.cs" />
     <Compile Include="Assets\Code\Settings.cs" />
